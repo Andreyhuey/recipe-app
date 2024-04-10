@@ -70,6 +70,20 @@ app.delete("/api/recipes/favourite", async (req, res) => {
   }
 });
 
-app.listen(5000, () => {
-  console.log("server running on localhost:5000");
+app.get("/", (request, response) => {
+  console.log(request);
+  return response
+    .status(234)
+    .send(
+      "Welcome to understanding backend operations with Node.js, prisma and elephantSQL using typescript"
+    );
 });
+
+async function connectToDatabase(){
+  app.listen(5000, () => {
+    console.log("server running on localhost:5000");
+  });
+}
+
+connectToDatabase()
+
