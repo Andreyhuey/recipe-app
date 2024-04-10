@@ -1,5 +1,6 @@
-const apiKey = process.env.API_KEY;
+const apiKey = process.env.API_KEY;  // spoontacular's api key
 
+// The async function to search for recipes using search term and page for pagination
 export const searchRecipes = async (searchTerm: string, page: number) => {
   if (!apiKey) {
     throw new Error("API Key not found");
@@ -24,6 +25,7 @@ export const searchRecipes = async (searchTerm: string, page: number) => {
   }
 };
 
+// The async function to get the recipe summary using the recipeId
 export const getRecipeSummary = async (recipeId: string) => {
   if (!apiKey) {
     throw new Error("API Key not found");
@@ -43,6 +45,8 @@ export const getRecipeSummary = async (recipeId: string) => {
   return json;
 };
 
+
+// The async function to get your favourite recipes using a array of ids
 export const getFavouriteRecipesByIDs = async (ids: string[]) => {
   if (!apiKey) {
     throw new Error("API Key not found");
